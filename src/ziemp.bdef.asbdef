@@ -1,0 +1,69 @@
+managed implementation in class zbp_iemp unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZIEMP //alias <alias_name>
+persistent table ztemp
+draft table ztemp_d
+lock master
+total etag ChangedDate
+authorization master ( instance )
+etag master ChangedDate
+{
+  create ( authorization : global );
+  update;
+  field ( numbering : managed ) EmpNo;
+  field ( readonly ) EmpNo, ChangedDate, ChangedUser, CreatedDate, CreatedUser;
+  field ( mandatory ) Gender, JobTitle;
+  association _leavebal { create; with draft; }
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare { }
+
+  mapping for ztemp corresponding
+    {
+      Address     = address;
+      Birthday    = birthday;
+      ChangedDate = changed_date;
+      ChangedUser = changed_user;
+      CreatedDate = created_date;
+      CreatedUser = created_user;
+      Del         = del;
+      EmpNo       = emp_no;
+      Empnam      = empnam;
+      Gender      = gender;
+      JobTitle    = job_title;
+      ManagerNo   = manager_no;
+    }
+}
+
+define behavior for ZILEAVEBAL //alias <alias_name>
+persistent table ztleavebal
+draft table ztleavebal_d
+lock dependent by _emp
+authorization dependent by _emp
+etag master ChangedDate
+{
+  update;
+  delete;
+  field ( readonly ) EmpNo, ChangedDate, ChangedUser, CreatedDate, CreatedUser, LeaveTypeDescr;
+  field ( readonly : update ) Zyear, LeaveType;
+  field ( mandatory ) EntitledDays;
+  association _emp { with draft; }
+
+  mapping for ztleavebal corresponding
+    {
+      ChangedDate  = changed_date;
+      ChangedUser  = changed_user;
+      CreatedDate  = created_date;
+      CreatedUser  = created_user;
+      EmpNo        = emp_no;
+      EntitledDays = entitled_days;
+      LeaveType    = leave_type;
+      UsedDays     = used_days;
+      Zyear        = zyear;
+    }
+}

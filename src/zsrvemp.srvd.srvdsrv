@@ -1,0 +1,5 @@
+@EndUserText.label: 'Employee Management'
+define service ZSRVEMP {
+  expose ZCEMP      as employee;
+  expose ZCLEAVEBAL as leave_balance;
+}

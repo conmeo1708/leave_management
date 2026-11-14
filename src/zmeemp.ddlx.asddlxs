@@ -1,0 +1,178 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName:       'Employee',
+  typeNamePlural: 'Employees',
+  typeImageUrl:   'sap-icon://employee',
+  title:       { type: #STANDARD, value: 'EmpNo' },
+  description: { type: #STANDARD, value: 'Empnam' }
+}
+
+@UI.presentationVariant: [{
+  sortOrder: [{ by: 'Empnam', direction: #ASC }],
+  visualizations: [{ type: #AS_LINEITEM }]
+}]
+
+annotate entity ZCEMP with
+{
+  @UI.facet: [
+    {
+        id: 'General',
+        purpose: #STANDARD,
+        type: #IDENTIFICATION_REFERENCE,
+        label: 'Employee Information',
+        position: 10
+    },
+    {
+        id: 'leaveBalance',
+        purpose: #STANDARD,
+        type: #LINEITEM_REFERENCE,
+        label: 'leaveBalance',
+        position: 20,
+        targetElement: '_leavebal' }
+  ]
+
+  @UI.lineItem: [
+    {
+        label: 'Employee ID',
+        position: 10
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Employee ID',
+        position: 10
+    }
+  ]
+  EmpNo;
+
+  @UI.lineItem: [
+    {
+        label: 'Employee Name',
+        position: 20
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Employee Name',
+        position: 20
+    }
+  ]
+  Empnam;
+
+  @EndUserText.label: 'Gender'
+  @UI.selectionField: [
+    {
+        position: 10
+    }
+  ]
+  @UI.lineItem: [
+    {
+        label: 'Gender',
+        position: 30
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Gender',
+        position: 40
+    }
+  ]
+  Gender;
+
+  @UI.identification: [
+    {
+        label: 'Birthday',
+        position: 50
+    }
+  ]
+  Birthday;
+
+  @UI.lineItem: [
+    {
+        label: 'Address',
+        position: 40
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Address',
+        position: 60
+    }
+  ]
+  Address;
+
+  @UI.identification: [
+    {
+        label: 'Manager ID',
+        position: 70
+    }
+  ]
+  ManagerNo;
+
+  @UI.lineItem: [
+    {
+        label: 'Job Title',
+        position: 50
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Job Title',
+        position: 80
+    }
+  ]
+  JobTitle;
+
+  @EndUserText.label: 'Deletion Flag'
+  @UI.selectionField: [
+    {
+        position: 20
+    }
+  ]
+  @UI.lineItem: [
+    {
+        label: 'Deletion Flag',
+        position: 60
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Deletion Flag',
+        position: 90
+    }
+  ]
+  Del;
+  @UI.identification: [
+    {
+        label: 'Created User',
+        position: 100
+    }
+  ]
+  CreatedUser;
+
+  @UI.identification: [
+    {
+        label: 'Created Date',
+        position: 110
+    }
+  ]
+  CreatedDate;
+
+  @UI.identification: [
+    {
+        label: 'Changed User',
+        position: 120
+    }
+  ]
+  ChangedUser;
+
+  @UI.identification: [
+    {
+        label: 'Changed Date',
+        position: 130
+    }
+  ]
+  ChangedDate;
+
+
+}

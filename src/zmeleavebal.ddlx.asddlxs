@@ -1,0 +1,107 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+  typeName:       'Leave Balance',
+  typeNamePlural: 'Leave Balance',
+  typeImageUrl:   'sap-icon://time-off',
+  title:       { type: #STANDARD, value: 'EmpNo' },
+  description: { type: #STANDARD, value: 'LeaveTypeDescr' }
+}
+annotate entity ZCLEAVEBAL with
+{
+  @UI.facet: [
+    {
+        id: 'General',
+        purpose: #STANDARD,
+        type: #IDENTIFICATION_REFERENCE,
+        label: 'Leave Balance Information',
+        position: 10
+    }
+  ]
+  @UI.lineItem: [
+    {
+        label: 'Employee ID',
+        position: 10
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Employee ID',
+        position: 10
+    }
+  ]
+  EmpNo;
+
+  @UI.lineItem: [
+    {
+        label: 'Year',
+        position: 20
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Year',
+        position: 20
+    }
+  ]
+  @EndUserText.label: 'Year'
+  Zyear;
+
+  @UI.lineItem: [
+    {
+        label: 'Leave Type',
+        position: 30
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Leave Type',
+        position: 30
+    }
+  ]
+  @EndUserText.label: 'Leave Type'
+  LeaveType;
+
+  @UI.lineItem: [
+    {
+        label: 'Leave Type Description',
+        position: 40
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Leave Type Description',
+        position: 40
+    }
+  ]
+  LeaveTypeDescr;
+
+  @UI.lineItem: [
+    {
+        label: 'Entitled Days',
+        position: 50
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Entitled Days',
+        position: 50
+    }
+  ]
+  EntitledDays;
+
+  @UI.lineItem: [
+    {
+        label: 'Used Days',
+        position: 60
+    }
+  ]
+  @UI.identification: [
+    {
+        label: 'Used Days',
+        position: 60
+    }
+  ]
+  UsedDays;
+
+}
