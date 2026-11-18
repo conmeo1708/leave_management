@@ -14,7 +14,7 @@ etag master ChangedDate
   update;
   field ( numbering : managed ) EmpNo;
   field ( readonly ) EmpNo, ChangedDate, ChangedUser, CreatedDate, CreatedUser;
-  field ( mandatory ) Gender, JobTitle;
+  field ( mandatory ) Gender, JobTitle, Empnam, Birthday, Address;
   association _leavebal { create; with draft; }
 
   draft action Edit;

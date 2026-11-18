@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Employee Management Application",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Employee Management"
+  },
+  "ui5AppDetails": {
+    "appId": "employeemanagementfrontend"
+  },
+  "navigation": {
+    "targetMappingId": "ZEMP_MANAGEMENT_UI5R_TM",
+    "semanticObject": "EmployeeManagement",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "ZEMP_MANAGEMENT_UI5R_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Employee Management"
+      }
+    }
+  ]
+}

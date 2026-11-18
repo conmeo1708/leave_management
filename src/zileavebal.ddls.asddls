@@ -12,8 +12,6 @@ define view entity ZILEAVEBAL
   key zyear            as Zyear,
 
   key leave_type       as LeaveType,
-      @ObjectModel.text.element: [ 'LeaveTypeDescr' ]
-      @UI.textArrangement: #TEXT_LAST
       _leaveType.Descr as LeaveTypeDescr,
       entitled_days    as EntitledDays,
       used_days        as UsedDays,

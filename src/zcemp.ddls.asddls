@@ -13,7 +13,10 @@ define root view entity ZCEMP
         fuzzinessThreshold: 0.8
       }
       Empnam,
+      @UI.textArrangement: #TEXT_LAST
+      @ObjectModel.text.element: [ 'GenderText' ]
       Gender,
+      GenderText,
       Birthday,
       @Search:{
         defaultSearchElement: true,
@@ -26,7 +29,10 @@ define root view entity ZCEMP
         fuzzinessThreshold: 0.8
       }
       JobTitle,
+      @UI.textArrangement: #TEXT_LAST
+      @ObjectModel.text.element: [ 'DelFlagText' ]
       Del,
+      DelFlagText,
       CreatedUser,
       CreatedDate,
       ChangedUser,

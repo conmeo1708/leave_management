@@ -3,8 +3,8 @@
   typeName:       'Employee',
   typeNamePlural: 'Employees',
   typeImageUrl:   'sap-icon://employee',
-  title:       { type: #STANDARD, value: 'EmpNo' },
-  description: { type: #STANDARD, value: 'Empnam' }
+  title:       { type: #STANDARD, value: 'Empnam' },
+  description: { type: #STANDARD, value: 'JobTitle' }
 }
 
 @UI.presentationVariant: [{
@@ -26,7 +26,7 @@ annotate entity ZCEMP with
         id: 'leaveBalance',
         purpose: #STANDARD,
         type: #LINEITEM_REFERENCE,
-        label: 'leaveBalance',
+        label: 'Leave Balance',
         position: 20,
         targetElement: '_leavebal' }
   ]
@@ -77,6 +77,17 @@ annotate entity ZCEMP with
         position: 40
     }
   ]
+  @Consumption:{
+    valueHelpDefinition: [
+        {
+            entity:{
+                name: 'ZIGENDER',
+                element: 'Gender'
+            },
+            useForValidation: true
+        }
+    ]
+  }
   Gender;
 
   @UI.identification: [
@@ -141,6 +152,17 @@ annotate entity ZCEMP with
         position: 90
     }
   ]
+  @Consumption:{
+    valueHelpDefinition: [
+        {
+            entity:{
+                name: 'ZIFLAG',
+                element: 'Flag'
+            },
+            useForValidation: true
+        }
+    ]
+  }
   Del;
   @UI.identification: [
     {

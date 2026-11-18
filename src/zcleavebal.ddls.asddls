@@ -7,6 +7,8 @@ define view entity ZCLEAVEBAL
 {
   key EmpNo,
   key Zyear,
+      @ObjectModel.text.element: [ 'LeaveTypeDescr' ]
+      @UI.textArrangement: #TEXT_LAST
   key LeaveType,
       LeaveTypeDescr,
       EntitledDays,

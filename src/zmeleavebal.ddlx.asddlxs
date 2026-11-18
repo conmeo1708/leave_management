@@ -4,7 +4,7 @@
   typeName:       'Leave Balance',
   typeNamePlural: 'Leave Balance',
   typeImageUrl:   'sap-icon://time-off',
-  title:       { type: #STANDARD, value: 'EmpNo' },
+  title:       { type: #STANDARD, value: 'LeaveType' },
   description: { type: #STANDARD, value: 'LeaveTypeDescr' }
 }
 annotate entity ZCLEAVEBAL with
@@ -18,18 +18,7 @@ annotate entity ZCLEAVEBAL with
         position: 10
     }
   ]
-  @UI.lineItem: [
-    {
-        label: 'Employee ID',
-        position: 10
-    }
-  ]
-  @UI.identification: [
-    {
-        label: 'Employee ID',
-        position: 10
-    }
-  ]
+
   EmpNo;
 
   @UI.lineItem: [
@@ -59,22 +48,33 @@ annotate entity ZCLEAVEBAL with
         position: 30
     }
   ]
+  @Consumption:{
+    valueHelpDefinition: [
+        {
+            entity:{
+                name: 'ZILEAVETYP',
+                element: 'LeaveType'
+            },
+            useForValidation: true
+        }
+    ]
+  }
   @EndUserText.label: 'Leave Type'
   LeaveType;
 
-  @UI.lineItem: [
-    {
-        label: 'Leave Type Description',
-        position: 40
-    }
-  ]
-  @UI.identification: [
-    {
-        label: 'Leave Type Description',
-        position: 40
-    }
-  ]
-  LeaveTypeDescr;
+//  @UI.lineItem: [
+//    {
+//        label: 'Leave Type Description',
+//        position: 40
+//    }
+//  ]
+//  @UI.identification: [
+//    {
+//        label: 'Leave Type Description',
+//        position: 40
+//    }
+//  ]
+//  LeaveTypeDescr;
 
   @UI.lineItem: [
     {

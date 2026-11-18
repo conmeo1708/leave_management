@@ -3,6 +3,8 @@
 {
 "FROM":
 [
+"ZIFLAG",
+"ZIGENDER",
 "ZTEMP"
 ],
 "ASSOCIATED":
